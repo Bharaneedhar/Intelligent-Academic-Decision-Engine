@@ -33,7 +33,7 @@ document.getElementById("loginBtn").addEventListener("click", async () => {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-  const res = await fetch("http://localhost:5000/api/auth/login", {
+  const res = await fetch("/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -55,7 +55,7 @@ document.getElementById("registerBtn").addEventListener("click", async () => {
   const email = document.getElementById("regEmail").value;
   const password = document.getElementById("regPassword").value;
 
-  const res = await fetch("http://localhost:5000/api/auth/register", {
+  const res = await fetch("/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, email, password }),
