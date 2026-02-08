@@ -1,14 +1,9 @@
-const express = require('express');
-const { register, login } = require('../controllers/auth.controller');
-const { googleLogin } = require('../controllers/googleAuth.controller');
+import express from "express";
+import { register, login } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-// local auth
-router.post('/register', register);
-router.post('/login', login);
+router.post("/register", register);
+router.post("/login", login);
 
-// google auth
-router.post('/google', googleLogin);
-
-module.exports = router;
+export default router;

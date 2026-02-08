@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="auth-wrapper">
+    <div class="background-shape"></div>
+    <div class="secondary-shape"></div>
+
+    <div class="credentials-panel signin">
+      <h2 class="slide-element">Login</h2>
+
+      <div class="field-wrapper slide-element">
+        <input type="email" id="loginEmail" required />
+        <label>Email</label>
+      </div>
+
+      <div class="field-wrapper slide-element">
+        <input type="password" id="loginPassword" required />
+        <label>Password</label>
+      </div>
+
+      <div class="field-wrapper slide-element">
+        <button class="submit-button" id="loginBtn">Login</button>
+      </div>
+
+      <div class="switch-link slide-element">
+        <p>
+          Don't have an account? <br />
+          <a href="#" id="goRegister">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="credentials-panel signup">
+      <h2 class="slide-element">Register</h2>
+
+      <div class="field-wrapper slide-element">
+        <input type="text" id="regUsername" required />
+        <label>Username</label>
+      </div>
+
+      <div class="field-wrapper slide-element">
+        <input type="email" id="regEmail" required />
+        <label>Email</label>
+      </div>
+
+      <div class="field-wrapper slide-element">
+        <input type="password" id="regPassword" required />
+        <label>Password</label>
+      </div>
+
+      <div class="field-wrapper slide-element">
+        <button class="submit-button" id="registerBtn">Register</button>
+      </div>
+
+      <div class="switch-link slide-element">
+        <p>
+          Already have an account? <br />
+          <a href="#" id="goLogin">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="welcome-section signin">
+      <h2 class="slide-element">WELCOME BACK!</h2>
+    </div>
+
+    <div class="welcome-section signup">
+      <h2 class="slide-element">WELCOME!</h2>
+    </div>
+  </div>
+
+  <script src="./style.js"></script>
+</body>
+</html>
