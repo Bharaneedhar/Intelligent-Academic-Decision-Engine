@@ -2,13 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Compass, BookOpen, BarChart2, Settings, LogOut, X, Brain, Sparkles } from 'lucide-react';
 import useAuthStore from '../store/authStore';
+import { getMediaUrl } from '../utils/getMediaUrl';
 
 const Sidebar = ({ isOpen, setIsOpen, mobileOpen, setMobileOpen }) => {
     const logout = useAuthStore(state => state.logout);
     const user = useAuthStore(state => state.user);
 
     const avatarUrl = user?.profileImage
-        ? `http://localhost:5000${user.profileImage}`
+        ? getMediaUrl(user.profileImage)
         : `https://ui-avatars.com/api/?name=${user?.name || 'U'}&background=random`;
 
     const navItems = [

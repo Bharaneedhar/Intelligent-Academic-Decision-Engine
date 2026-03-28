@@ -8,6 +8,7 @@ import useNotificationStore from '../store/useNotificationStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { getMediaUrl } from '../utils/getMediaUrl';
 
 const Navbar = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
     const { user, logout } = useAuthStore();
@@ -128,7 +129,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
 
     // User Image logic
     const avatarUrl = user?.profileImage
-        ? `http://localhost:5000${user.profileImage}`
+        ? getMediaUrl(user.profileImage)
         : `https://ui-avatars.com/api/?name=${user?.name || 'U'}&background=random`;
 
     return (

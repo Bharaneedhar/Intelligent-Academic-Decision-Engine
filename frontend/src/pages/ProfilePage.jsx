@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { User, Mail, Shield, Camera, Settings, LogOut, Loader2 } from 'lucide-react';
 import useAuthStore from '../store/authStore';
 import api from '../utils/api';
+import { getMediaUrl } from '../utils/getMediaUrl';
 
 const ProfilePage = () => {
     const { user, logout, updateUser } = useAuthStore();
@@ -50,7 +51,7 @@ const ProfilePage = () => {
     };
 
     const avatarUrl = user?.profileImage
-        ? `http://localhost:5000${user.profileImage}`
+        ? getMediaUrl(user.profileImage)
         : `https://ui-avatars.com/api/?name=${user?.name || 'U'}&background=random&size=128`;
 
     return (
