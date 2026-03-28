@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: theme(colors.background.light);
+  color: theme(colors.text.primary);
+}
+
+/* Dark theme defaults (so text never disappears) */
+.dark body {
+  background: theme(colors.background.dark);
+  color: #f8fafc;
+}
+
+/* Custom styles for Modern SaaS Design */
+.glass-panel {
+  @apply bg-white/70 dark:bg-slate-950/70 border-r border-[color:theme(colors.border.light)] dark:border-slate-800 shadow-sm backdrop-blur-xl;
+}
+
+.glass-card {
+  /* Rounded organic cards, soft elevation, hover lift */
+  @apply bg-white dark:bg-slate-900 border border-[color:theme(colors.border.light)] dark:border-slate-800 rounded-[20px] p-6 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1;
+}
+
+.soft-input {
+  @apply w-full px-4 py-3 bg-white dark:bg-slate-900 border border-[color:theme(colors.border.light)] dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500;
+}
+
+.soft-select {
+  @apply w-full px-4 py-3 bg-white dark:bg-slate-900 border border-[color:theme(colors.border.light)] dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm text-slate-900 dark:text-slate-100;
+}
+
+.soft-button {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[30px] font-semibold transition-all duration-300;
+}
+
+.soft-button-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[30px] font-semibold transition-all duration-300 bg-primary text-slate-900 shadow-[0_10px_25px_rgba(246,197,71,0.35)] hover:shadow-[0_18px_40px_rgba(246,197,71,0.45)] hover:-translate-y-0.5;
+}
+
+.soft-button-ghost {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[30px] font-semibold transition-all duration-300 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-[color:theme(colors.border.light)] dark:border-slate-800 text-slate-900 dark:text-slate-100 hover:bg-white dark:hover:bg-slate-900;
+}
+
+/* Report helpers */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.report-card {
+  @apply bg-white dark:bg-slate-900 border border-[color:theme(colors.border.light)] dark:border-slate-800 rounded-2xl shadow-[0_8px_20px_rgba(0,0,0,0.05)];
+}
+
+/* React Calendar Premium Overrides */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: inherit !important;
+  background: transparent !important;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 1rem !important;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.dark .react-calendar__navigation button {
+  color: #f8fafc !important;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.react-calendar__tile {
+  padding: 0.75rem 0.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+  position: relative;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #f1f5f9 !important;
+  transform: translateY(-1px);
+}
+
+.dark .react-calendar__tile:enabled:hover {
+  background-color: #1e293b !important;
+}
+
+.react-calendar__tile--now {
+  background: #f1f5f9 !important;
+  color: #8b5cf6 !important;
+}
+
+.dark .react-calendar__tile--now {
+  background: #1e293b !important;
+  color: #a78bfa !important;
+}
+
+.react-calendar__tile--active {
+  background: #8b5cf6 !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3) !important;
+}
+
+.react-calendar__tile--active:enabled:hover {
+  background: #7c3aed !important;
+}
+
+.light-calendar-override .react-calendar__tile--active {
+  color: white !important;
+}
+
+/* Custom indicator dot */
+.calendar-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #10b981;
+  border-radius: 50%;
+  margin: 2px auto 0;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+/* Heatmap Tooltip Shadow */
+.heatmap-tooltip {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dropdown {
+  @apply bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-2xl;
+}
